@@ -1,0 +1,79 @@
+{
+  "name": "tttgameengine",
+  "version": "0.0.0-development",
+  "description": "An npm package for demonstration purposes using TypeScript to build for both the ECMAScript Module format (i.e. ESM or ES Module) and CommonJS Module format. It can be used in Node.js and browser applications.",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "types": "./lib/cjs/types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "linux:clean": "rm -rf ./lib",
+    "linux:build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "linux:build:esm": "tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "linux:prepack": "npm run build",
+    "window:clean": "rmdir /s lib",
+    "window:build": "npm run window:clean & npm run window:build:esm & npm run build:cjs",
+    "window:build:esm": "tsc -p ./configs/tsconfig.esm.json & cd lib & cd esm & ren index.js index.mjs & cd ../ & cd ../",
+    "window:prepack": "npm run window:build",
+    "clean": "rmdir /s lib",
+    "build": "npm run clean & npm run build:esm & npm run build:cjs",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json & cd lib & cd esm & ren index.js index.mjs & cd ../ & cd ../",
+    "prepack": "npm run build",
+    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "test": "mocha",
+    "semantic-release": "semantic-release"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "npm",
+    "javascript",
+    "typescript",
+    "esm",
+    "cjs",
+    "nodejs",
+    "commonjs",
+    "ecmascript",
+    "beginner",
+    "example",
+    "demonstration"
+  ],
+  "author": "TTTGalaxyLabs",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@types/mocha": "^9.1.1",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4",
+    "semantic-release": "^19.0.3",
+    "@types/chai": "^4.3.3",
+    "chai": "^4.3.6"
+  }
+}
