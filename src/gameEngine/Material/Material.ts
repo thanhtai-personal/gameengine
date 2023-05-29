@@ -1,4 +1,5 @@
 abstract class Material {
+  protected context: any;
   constructor() {}
 
   abstract update(): void;
