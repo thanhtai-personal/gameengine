@@ -1,5 +1,5 @@
 import Vector3 from "./DataTypes/Vector3";
-import Game from "./Game";
+import Game, { ResourceType } from "./Game";
 import Scene from "./gameEngine/Material/abstract/Scene/Scene";
 import Entity from "./gameEngine/Material/entities/Entity";
 import Glass from "./gameEngine/Material/entities/Cell/Concretes/Glass";
@@ -14,4 +14,5 @@ export default {
   Water,
   Cell,
   Entity,
+  ResourceType,
 };

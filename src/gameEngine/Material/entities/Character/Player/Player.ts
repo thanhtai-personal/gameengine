@@ -5,7 +5,7 @@ class Player extends Character {
     super();
   }
 
-  update(): void {}
+  update(time: number): void {}
 
   draw(): void {}
 }

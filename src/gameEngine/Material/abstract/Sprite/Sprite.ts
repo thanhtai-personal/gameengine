@@ -30,7 +30,7 @@ class Sprite extends AbstractObj {
     );
   }
 
-  update() {
+  update(time: number) {
     this.currentFrame =
       this.currentFrame + 1 > this.imagesList.length
         ? 0

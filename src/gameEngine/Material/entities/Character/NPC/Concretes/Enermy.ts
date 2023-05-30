@@ -5,7 +5,7 @@ class Enermy extends NPC {
     super();
   }
 
-  update(): void {}
+  update(time: number): void {}
 
   draw(): void {}
 }

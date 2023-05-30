@@ -7,7 +7,7 @@ class GamePlay extends Scene {
 
   draw(): void {}
 
-  update(): void {}
+  update(time: number): void {}
 }
 
 export default GamePlay;

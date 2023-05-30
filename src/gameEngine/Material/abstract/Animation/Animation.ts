@@ -7,7 +7,7 @@ class Animation extends AbstractObj {
 
   draw(): void {}
 
-  update(): void {}
+  update(time: number): void {}
 }
 
 export default Animation;

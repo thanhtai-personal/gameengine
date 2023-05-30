@@ -5,7 +5,7 @@ class Glass extends Cell {
     super();
   }
 
-  update(): void {}
+  update(time: number): void {}
 
   draw(): void {}
 }

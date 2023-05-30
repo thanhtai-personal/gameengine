@@ -7,7 +7,7 @@ class Scene extends AbstractObj {
 
   draw(): void {}
 
-  update(): void {}
+  update(time: number): void {}
 }
 
 export default Scene;

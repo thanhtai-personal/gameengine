@@ -7,7 +7,7 @@ class Cell extends Entity {
 
   draw(): void {}
 
-  update(): void {}
+  update(time: number): void {}
 }
 
 export default Cell;
